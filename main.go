@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"time"
 
 	"github.com/hybridgroup/gobot"
@@ -8,9 +9,12 @@ import (
 )
 
 func main() {
+	deviceName := flag.String("device", "", "path to Sphero device")
+	flag.Parse()
+
 	gbot := gobot.NewGobot()
 
-	adaptor := sphero.NewSpheroAdaptor("sphero", "/dev/tty.Sphero-RGW-RN-SPP")
+	adaptor := sphero.NewSpheroAdaptor("sphero", *deviceName)
 	driver := sphero.NewSpheroDriver(adaptor, "sphero")
 
 	work := func() {
