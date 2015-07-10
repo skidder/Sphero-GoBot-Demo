@@ -1,12 +1,12 @@
 # Sphero-GoBot-Demo
 Demo of the Sphero support in Gobot.io
 
-==Running==
+##Running##
 ```shell
 go run main.go --device={device path}
 ```
 
-===Example===
+###Example###
 ```shell
 go run main.go --device=/dev/tty.Sphero-RGW-RN-SPP
 ```
